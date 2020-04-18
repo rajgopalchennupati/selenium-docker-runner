@@ -15,7 +15,6 @@ services:
         image: rajgopalchennupati/selenium-docker
         container_name: search-module
         depends_on:
-          - firefox
           - chrome
         environment:
           - MODULE=search-module.xml
