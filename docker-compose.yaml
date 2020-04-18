@@ -1,0 +1,23 @@
+version: "3"
+services:
+  hub:
+    image: selenium/hub
+    ports:
+      - "8080:4444"
+  chrome:
+    image: selenium/node-chrome
+    depends_on:
+      - hub
+    environment:
+      - HUB_HOST=hub
+
+   search-module:
+        image: rajgopalchennupati/selenium-docker
+        container_name: search-module
+        depends_on:
+          - firefox
+          - chrome
+        environment:
+          - MODULE=search-module.xml
+          - BROWSER=chrome
+          - HUB_HOST=hub    
