@@ -12,7 +12,7 @@ services:
       - HUB_HOST=hub
 
   search-module:
-        image: rajgopalchennupati/selenium-docker
+        image: rajgopalstuff/selenium-docker
         container_name: search-module
         depends_on:
           - chrome
